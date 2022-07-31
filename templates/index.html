@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Say Hello</title>
+<style>
+    html {
+height: 100%;
+}
+#greet{
+    background-color: palevioletred;
+    color: white;
+    width: 200px;
+
+}
+#greet:hover{
+    background-color: mediumvioletred;
+    cursor: pointer;
+}
+img{
+    margin: 60px 0 30px 0;
+    width: 250px;
+}
+input{
+    width: 300px;
+    height: 50px;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: Shanti;
+    font-size: 1.3em;
+    text-align: center;
+}
+input:focus{
+    border:solid 5px #00FFCE;
+    outline: none;
+}
+p{
+    color: white;
+    font-family: Shanti;
+    font-size: 1.2em;
+    margin: 20px;
+}
+body {
+    text-align: center;
+background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+}
+</style>
+</head>
+<body>
+    <h1>Linear Gradient</h1>
+<p>This linear gradient starts as dark blue at the top left and transitions from pink to orange at the bottom right.</p>
+
+<img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
+<br>
+<form action="greet" method="post">
+    
+<br>
+<input type="text" name="name_input">
+{%for message in get_flashed_messages()%}
+    <p>{{message}}</p>
+    {%endfor%}
+<br>
+<input type="submit"  value="GREET" id="greet">
+</form>
+
+</body>
+</html>
